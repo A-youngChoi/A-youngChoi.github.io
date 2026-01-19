@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --accent: #2a5a8a;
+  --border: #e5e5e5;
+  --bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header / Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.profile .tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Bio */
+.bio {
+  margin-bottom: 40px;
+}
+
+.bio p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section headings */
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* News list */
+.news-list {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.news-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 6px 0;
+}
+
+.news-list li strong {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+/* Publications */
+.pub-list {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.pub-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-list .pub-title {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.pub-list .pub-venue {
+  font-style: italic;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.back-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 40px 20px 60px;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
