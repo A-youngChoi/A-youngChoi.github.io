@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayoung Choi</title>
   <link rel="stylesheet" href="assets/style.css">
+  
+  <style>
+    .news-list li.extra-news {
+      display: none; /* Hides older news by default */
+    }
+    .news-list.expanded li.extra-news {
+      display: list-item; /* Shows them when expanded */
+    }
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #0056b3;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+    .toggle-btn:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -27,36 +49,66 @@
 
   <div class="bio">
     <p>
-      I am currently an Undergraduate Research Intern at POSTECH, advised by
+      I am currently an Undergraduate Research Intern at <a href="" target="_blank">HIS Lab</a> in POSTECH, advised by
       <a href="" target="_blank">Inseok Hwang</a>.
-    </p>
-    <p>
       I will graduate in February 2026.
-    </p>
-    <p>
-      I work at the human-computer interaction.
+      I work in human-computer interaction.
     </p>
   </div>
 
   <h2>News</h2>
-  <ul class="news-list">
-    <li><strong>2026.02</strong> I graduated in JBNU</li>
-    <li><strong>2026.02</strong> Personal website launched</li>
+  <ul class="news-list" id="news-list">
+    <li><strong>Feb 2026</strong>: I graduated from JBNU! I'm grateful to everyone who supported me during my undergraduate journey. Looking forward to new adventures ahead!</li>
+    <li><strong>Jan 2026</strong>: Thrilled to share that my paper has been published in the Journal of KIISE (JOK)!</li>
+    <li><strong>Oct 2025</strong>: Presented a poster at UIST 2025, my first international conference presentation.</li>
+    
+    <li class="extra-news"><strong>Sep 2025</strong>: Started working as an Undergraduate Research Intern at HIS Lab, POSTECH.</li>
+    <li class="extra-news"><strong>Jul 2025</strong>: Participated in K-VIS in Pohang.</li>
+    <li class="extra-news"><strong>Apr 2025</strong>: Attended CHI 2025 in Japan, my first time attending an international conference.</li>
+    <li class="extra-news"><strong>2024</strong>: Presented my very first paper as a poster at KCC 2024.</li>
+    <li class="extra-news"><strong>Feb 2024</strong>: Completed a winter research internship at ETRI.</li>
   </ul>
+  <button id="toggle-btn" class="toggle-btn" onclick="toggleNews()">Show More</button>
 
-  <h2>Selected Publications</h2>
+  <h2>Publications</h2>
   <ul class="pub-list">
     <li>
-      <span class="pub-title">Title of the Paper</span><br>
-      Ayoung Choi, Coauthor Name, <br>
-      <span class="pub-venue">Conference Name, 2025</span>
+      <span class="pub-title">A Method for Predicting Tappability of Interface Elements in Mobile Application Using Layout Features</span><br>
+      Ayoung Choi, Jongwook Jeong* <br>
+      <span class="pub-venue">Journal of KIISE, JOK</span>
     </li>
     <li>
-      <span class="pub-title">Another Paper Title</span><br>
-      Ayoung Choi, Coauthor Name<br>
-      <span class="pub-venue">Journal Name, 2024</span>
+      <span class="pub-title">Can LLMs Detect Display Issues? Uncovering the Impact of Prompting Techniques</span><br>
+      Ayoung Choi, Jongwook Jeong*<br>
+      <span class="pub-venue">ACM Symposium on User Interface Software and Technology, UIST 25' Adjunct</span>
+    </li>
+    <li>
+      <span class="pub-title"> A study on user sentiment-based usability testing using facial expression recognitions</span><br>
+      Ayoung Choi, Soun Kim, Jongwook Jeong*<br>
+      <span class="pub-venue">Korea Computer Congress, KCC 24'</span>
+    </li>
+    <li>
+      <span class="pub-title">A comparative study of 2D vs. 3D chart visualizations in virtual reality</span><br>
+      Jongwook Jeong, Ayoung Choi, Dongwoo Kang, Youn Kyu Lee*<br>
+      <span class="pub-venue">Journal of Visualization (SCIE)</span>
     </li>
   </ul>
 
+  <script>
+    function toggleNews() {
+      const list = document.getElementById("news-list");
+      const btn = document.getElementById("toggle-btn");
+      
+      // Toggle the 'expanded' class on the ul element
+      list.classList.toggle("expanded");
+      
+      // Change button text based on the state
+      if (list.classList.contains("expanded")) {
+        btn.textContent = "Show Less";
+      } else {
+        btn.textContent = "Show More";
+      }
+    }
+  </script>
 </body>
 </html>
